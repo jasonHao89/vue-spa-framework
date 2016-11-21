@@ -1,7 +1,7 @@
 {
   "name": "vue-spa-framework",
-  "version": "1.0.0",
-  "description": "vue spa framewor",
+  "version": "0.0.1",
+  "description": "vue spa framework",
   "author": "HaoSijie <414117934@qq.com>",
   "private": true,
   "scripts": {
