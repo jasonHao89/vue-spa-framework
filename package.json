@@ -16,6 +16,7 @@
     "echarts": "^3.3.2",
     "jquery": "^3.1.1",
     "kindeditor": "^4.1.10",
+    "swiper": "^3.4.0",
     "vue": "^2.0.1",
     "vue-resource": "^1.0.3",
     "vue-router": "^2.0.3",
