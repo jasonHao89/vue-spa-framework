@@ -1,5 +1,7 @@
+import $ from 'jquery'
 export default {
     beforeCreate:function(){
+        console.warn($('title').text())
         console.warn("beforeCreate in index")
     },
     created:function(){
