@@ -1,7 +1,7 @@
 export default function (VueRouter) {
   const routes = [
-    { path: '/', component: require('../views/index.vue') },
-    { path: '/foo', component: require('../views/foo.vue') }
+    { path: '/', component: require('views/index.vue') },
+    { path: '/foo', component: require('views/foo.vue') }
   ]
   const router = new VueRouter({
     mode: 'history',
