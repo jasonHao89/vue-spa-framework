@@ -15,6 +15,7 @@
   "dependencies": {
     "echarts": "^3.3.2",
     "jquery": "^3.1.1",
+    "jquery-validation": "^1.15.1",
     "kindeditor": "^4.1.10",
     "swiper": "^3.4.0",
     "vue": "^2.0.1",
