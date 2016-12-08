@@ -1,4 +1,4 @@
-export default function (VueRouter) {
+export default function (VueRouter, store) {
   const routes = [
     { path: '/', component: require('views/index.vue') },
     {
@@ -48,6 +48,8 @@ export default function (VueRouter) {
   })
   router.beforeEach((to, from, next) => {
     console.warn('beforeEach')
+    store.commit('SYNC_USER', {userId: 10})
+    console.log(store.state.user)
     next()
   })
   router.afterEach(route => {
