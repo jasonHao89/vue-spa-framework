@@ -49,9 +49,17 @@ export default {
     data:function(){
         console.warn("I am data")
         var newfoo="new foo"
+        const query = Object.assign({},this.$route.query)
+        //初始化query
+        if((typeof query.checkedNames)==='string')
+            query.checkedNames=[query.checkedNames]
+        else
+            query.checkedNames=Object.assign([],this.$route.query.checkedNames)
         
+        query.foo=query.foo
         return{
-            foo:newfoo
+            foo:newfoo,
+            query: query
         }
 
     },
@@ -59,8 +67,12 @@ export default {
         "$data":function(){
             console.warn("data is update")
         },
-        "$route":function(){
-            console.warn("route is update")
+        "query":{
+            handler:function(){
+                console.warn("route is update")
+                this.$router.push({path:'/foo',query:Object.assign({},this.query)})
+            },
+            deep: true
         }
     },
     methods:{
