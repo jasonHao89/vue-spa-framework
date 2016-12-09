@@ -1,13 +1,18 @@
 import * as mutations from '../mutations'
+import * as actions from '../actions'
 export default {
   state: {
-    userId: null
   },
   mutations: {
-    [mutations.SYNC_USER] (state, user) {
-      console.warn(user)
-      state.userId = user.userId
+    [mutations.UPDATE_USER] (state,user) {
+      Object.assign(state,user)
     }
   },
-  actions: {}
+  actions: {
+    [actions.SYNC_USER] (context){
+      $.get('/rest/user/current',function(resp){
+        context.commit(mutations.UPDATE_USER,resp.user)
+      })
+    }
+  }
 }

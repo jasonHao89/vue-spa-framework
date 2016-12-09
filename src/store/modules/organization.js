@@ -1,12 +1,18 @@
 import * as mutations from '../mutations'
+import * as actions from '../actions'
 export default {
   state: {
-    orgId: null
   },
   mutations: {
-    [mutations.SYNC_ORG] (state, org) {
-      state.orgId = org.orgId
+    [mutations.UPDATE_ORG] (state,org) {
+      Object.assign(state,org)
     }
   },
-  actions: {}
+  actions: {
+    [actions.SYNC_ORG] (context){
+      $.get('/rest/org/current',function(resp){
+        context.commit(mutations.UPDATE_ORG,resp.org)
+      })
+    }
+  }
 }
