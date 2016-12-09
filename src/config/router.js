@@ -48,9 +48,12 @@ export default function (VueRouter, store) {
   })
   router.beforeEach((to, from, next) => {
     console.warn('beforeEach')
-    store.commit('SYNC_USER', {userId: 10})
-    console.log(store.state.user)
-    next()
+    store.dispatch('SYNC_ALL')
+    if(store.state.user.userId===undefined)
+      console.warn('还没有登录或登录超时')
+    else
+      console.warn('登录成功')
+      next()
   })
   router.afterEach(route => {
     console.warn('afterEach')
