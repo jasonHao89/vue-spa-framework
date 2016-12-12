@@ -8,6 +8,7 @@ import './config/ajax'
 import 'jquery-validation'
 import './assets/additional-methods.js'
 import './config/date-extends'
+import './config/vue-filters'
 
 /* $ 已全局化, 因为eslint规范变量必须先声明在使用，所以请使用window.$
 * 建议写法:
