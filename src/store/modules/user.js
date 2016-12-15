@@ -10,9 +10,14 @@ export default {
   },
   actions: {
     [actions.SYNC_USER] (context){
-      $.get('/rest/user/current',function(resp){
-        context.commit(mutations.UPDATE_USER,resp.user)
-      })
+        $.ajax({
+            type:"GET",
+            url:'/rest/user/current',
+            async: false,
+            success:(resp)=>{
+                  context.commit(mutations.UPDATE_USER,resp.user)
+            }
+        })
     }
   }
 }
