@@ -1,3 +1,3 @@
-export const UPDATE_USER = 'SYNC_USER'
-export const UPDATE_ORG = 'SYNC_ORG'
-export const UPDATE_ENTERPRISE = 'ENTERPRISE'
+export const UPDATE_USER = 'UPDATE_USER'
+export const UPDATE_ORG = 'UPDATE_ORG'
+export const UPDATE_ENTERPRISE = 'UPDATE_ENTERPRISE'
