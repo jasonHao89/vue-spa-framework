@@ -44,7 +44,16 @@ Object.keys(proxyTable).forEach(function (context) {
   }
   app.use(proxyMiddleware(context, options))
 })
+//处理门户转发逻辑
+const filter = (url,req)=>{
+  if(url=='/app.js' || url.match('\/static') || config.dev.rootPath.split("/")[1]==url.split("/")[1] || url=="/__webpack_hmr")
+    return false
+  else
+    return true
+}
 
+if(config.dev.rootPath!='/')
+  app.use(proxyMiddleware(filter, {target:'http://192.168.2.14'}))
 // handle fallback for HTML5 history API
 app.use(require('connect-history-api-fallback')())
 

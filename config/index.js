@@ -19,19 +19,18 @@ module.exports = {
   dev: {
     env: require('./dev.env'),
     port: 8080,
-    rootPath: '/',
+    rootPath: '/ec',
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     //proxyTable按照书序依次查找，以匹配到的第一条代理规则为准，所以请严格遵守顺序，
     //请将自己负责的模块注释掉
-    //这里逻辑有问题，暂时注释掉
+    //！！门户模块请忽略这里
     proxyTable: {
-      '/rest': 'http://192.168.2.14:8080',
+      '/rest': 'http://192.168.2.14',
       
-      // '/mall': 'http://192.168.2.14:8080',
-      // '/ec': 'http://192.168.2.14:8080',
-      // '/setup': 'http://192.168.2.14:8080',
-      // '/': 'http://192.168.2.14:8080'      
+      '/mall': 'http://192.168.2.14',
+      // '/ec': 'http://192.168.2.14',
+      '/setup': 'http://192.168.2.14',  
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
