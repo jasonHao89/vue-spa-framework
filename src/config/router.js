@@ -48,6 +48,7 @@ export default function (VueRouter, store) {
   })
   router.beforeEach((to, from, next) => {
     console.warn('beforeEach')
+    console.warn(to.fullPath)
     store.dispatch('SYNC_ALL')
     if(store.state.user.userId===undefined)
       console.warn('还没有登录或登录超时')

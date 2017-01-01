@@ -1,6 +1,7 @@
 import $ from 'jquery'
 $.ajaxSetup({
   timeout: 3000,
+  contentType:"application/json",
   success: function (data) {
       // todo something
   },
